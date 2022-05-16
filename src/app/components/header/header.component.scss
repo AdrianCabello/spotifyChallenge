@@ -1,0 +1,25 @@
+header {
+    background-color: var(--color-bg-header);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    span {
+        color: #fff;
+    }
+    .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            margin-right: 10px;
+            height: 40px;
+        }
+     
+    }
+    .logo-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

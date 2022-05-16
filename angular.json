@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "spoty"
+  "defaultProject": "spoty",
+  "cli": {
+    "analytics": "584685c7-335d-4fb3-b52f-c5198b987d3b"
+  }
 }

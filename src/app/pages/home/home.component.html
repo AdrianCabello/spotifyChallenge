@@ -1,0 +1,20 @@
+<section>
+
+    <app-search></app-search>
+
+    <div *ngIf="loading">Loading...</div>
+
+    <article *ngIf="artists.length > 0">
+        <h1>Artists:</h1>
+        <div class="albums-container">
+            <app-card *ngFor="let album of artists" [album]="album"></app-card>
+        </div>
+    </article>
+    <article *ngIf="artists.length == 0  && !loading">
+        <h1>Albums:</h1>
+        <div class="albums-container">
+            <app-card *ngFor="let album of albums" [album]="album"></app-card>
+        </div>
+    </article>
+
+</section>

@@ -1,0 +1,23 @@
+.card-container{
+    background-color: #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    display: flex;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    margin-bottom: 1rem;
+    cursor: pointer;
+    h2{
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    h3{
+        font-size:1rem;
+    }
+    span{
+        font-size: 1rem;
+    }
+    img{
+        height: 100px;
+        margin-right: 1rem;
+    }
+}

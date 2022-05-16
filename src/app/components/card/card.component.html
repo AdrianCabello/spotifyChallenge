@@ -1,0 +1,11 @@
+<div class="card-container">
+    <img [src]="album.images | noimage" alt="Artist">
+    <div>
+        <h2>{{album.name}} </h2>
+        <h3>Artists:</h3>
+        <div *ngFor="let artista of album?.artists" class="artista">
+            <span>{{artista.name}}</span>
+        </div>
+        <span>Tracks: {{ album.total_tracks}}</span>
+    </div>
+</div>
