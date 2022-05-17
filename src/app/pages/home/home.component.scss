@@ -1,24 +1,56 @@
 .albums-container {
     margin-top: 1rem;
+    margin: 0 auto;
+    h1 {
+        margin-bottom: 1rem;
+    }
 }
 
-section {
-    width: 80%;
-    margin-left: 10%;
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    .card {
+        width: 24%;
+    }
+}
+.error {
+    background: #ff4040;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-radius: 1rem;
 }
 
 h1 {
     color: #fff;
+    font-size: 1.7rem;
+}
+
+/* Media Queries (Medium Devices) */
+
+@media screen and (max-width: 1224px) {
+    .cards-container {
+        .card {
+            width: 32%;
+        }
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .cards-container {
+        .card {
+            width: 48%;
+        }
+    }
 }
 
 @media screen and (max-width: 600px) {
-    .albums-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-    }
-
-    section {
-        width: 100%;
-        margin-left: 0;
+    .cards-container {
+        .card {
+            width: 98%;
+        }
     }
 }

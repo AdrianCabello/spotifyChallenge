@@ -1,15 +1,13 @@
 .search-container {
-    padding: 1rem;
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 2rem;
-    
+    width: 100%;
     input{
         border-radius: 4px;
         padding: 10px;
         margin-left: 0.5rem;
-        width: 50%;
+        width: 100%;
     }
 }

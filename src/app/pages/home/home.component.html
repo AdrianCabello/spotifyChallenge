@@ -1,20 +1,22 @@
-<section>
+<section class="container">
 
-    <app-search></app-search>
+    <app-loading *ngIf="loading"></app-loading>
 
-    <div *ngIf="loading">Loading...</div>
+    <div class="error" *ngIf="error && artists.length == 0">
+        {{errorMessage}}
+    </div>
 
-    <article *ngIf="artists.length > 0">
+    <article class="albums-container animate__animated animate__fadeIn" *ngIf="artists.length == 0  && !loading && !error">
+        <h1>Featured PlayLists:</h1>
+        <div class="cards-container">
+            <app-card class="card" *ngFor="let album of playlist" [album]="album"></app-card>
+        </div>
+    </article>
+
+    <article class="albums-container animate__animated animate__fadeIn" *ngIf="artists.length > 0  && !loading">
         <h1>Artists:</h1>
-        <div class="albums-container">
-            <app-card *ngFor="let album of artists" [album]="album"></app-card>
+        <div class="cards-container">
+            <app-card class="card" *ngFor="let album of artists" [album]="album"></app-card>
         </div>
     </article>
-    <article *ngIf="artists.length == 0  && !loading">
-        <h1>Albums:</h1>
-        <div class="albums-container">
-            <app-card *ngFor="let album of albums" [album]="album"></app-card>
-        </div>
-    </article>
-
 </section>

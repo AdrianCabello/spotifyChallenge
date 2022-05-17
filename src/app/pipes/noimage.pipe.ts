@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'noimage'
+  name: 'noImage'
 })
-export class NoimagePipe implements PipeTransform {
+export class NoImagePipe implements PipeTransform {
 
   transform(images: any[]): string {
     if (!images) {
@@ -15,7 +15,6 @@ export class NoimagePipe implements PipeTransform {
     } else{
       return 'assets/noimage.png'
     }
-
 
   }
 

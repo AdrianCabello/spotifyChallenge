@@ -1,0 +1,50 @@
+.artist {
+    margin-top: 3rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    color: #fff;
+    display: flex;
+    border-radius: 1rem;
+    background-color: #464646;
+    img {
+        border-radius: 1rem;
+        height: 200px;
+        margin-right: 1rem;
+    }
+    .followers{
+        opacity: 0.9;
+    }
+    p {
+        opacity: 0.9;
+    }
+}
+
+h2 {
+    color: #fff;
+}
+
+.track {
+    display: flex;
+    color: #fff;
+    margin-bottom: 1rem;
+    img {
+        height: 60px;
+        margin-right: 1rem;
+    }
+}
+
+.tracks-container {
+    height: 60vh;
+    overflow-y: scroll;
+    padding-right: 5px;
+}
+
+.tracks-container::-webkit-scrollbar {
+    width: 7px;
+}
+
+.tracks-container::-webkit-scrollbar-thumb {
+    background-color: rgba(128, 128, 128, 0.4);
+    border-radius: 5px;
+    height: 50px;
+}

@@ -1,8 +1,8 @@
-import { NoimagePipe } from './noimage.pipe';
+import { NoImagePipe } from './noimage.pipe';
 
 describe('NoimagePipe', () => {
   it('create an instance', () => {
-    const pipe = new NoimagePipe();
+    const pipe = new NoImagePipe();
     expect(pipe).toBeTruthy();
   });
 });

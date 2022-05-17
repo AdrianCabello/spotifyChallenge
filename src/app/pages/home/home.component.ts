@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { Albums } from 'src/app/models/albums';
@@ -9,39 +9,45 @@ import { SpotifyService } from 'src/app/services/spotify.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
   albums: Albums;
   loading: boolean;
+  error: boolean;
+  errorMessage: string;
   subArtists: Subscription;
   artists = []
-
+  playlist: any;
   constructor(private _spotifyService: SpotifyService, private store: Store) { }
 
   ngOnInit(): void {
 
     this.subArtists = this.store.subscribe(
-      (data : any) => {
+      (data: any) => {
+        this.loading = data.loading;
         this.artists = data.artists;
-        console.log(this.artists)
-    }
+      }
     );;
 
-    this.getNewReleases()
+    this.getPlaylist()
   }
 
-  getNewReleases() {
-    this.loading = true;
-    this._spotifyService.getNewReleases().subscribe(
-      (data: any) => {
+  ngOnDestroy() {
+    this.subArtists.unsubscribe()
+  }
+
+  getPlaylist() {
+    this.loading = true
+    this._spotifyService.getPlaylists().subscribe(
+      (data) => {
         this.loading = false;
-        this.albums = data
+        this.playlist = data;
+      },
+      (error) => {
+        this.loading = false;
+        this.error = true;
+        this.errorMessage = error.error.error.message
       }
     )
   }
-
-  getSearchArtists() {
-
-  }
-
 }

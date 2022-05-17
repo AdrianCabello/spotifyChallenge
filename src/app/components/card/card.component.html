@@ -1,11 +1,14 @@
-<div class="card-container">
-    <img [src]="album.images | noimage" alt="Artist">
-    <div>
-        <h2>{{album.name}} </h2>
-        <h3>Artists:</h3>
+<div class="card-container" (click)="showArtist()">
+    <div class="img-container">
+        <img [src]="album.images | noImage" alt="Artist">
+    </div>
+    <div class="info-container">
+        <h2>{{album.name}}</h2>
         <div *ngFor="let artista of album?.artists" class="artista">
             <span>{{artista.name}}</span>
         </div>
-        <span>Tracks: {{ album.total_tracks}}</span>
+        <span *ngIf="album.type === 'playlist'" class="followers">Tracks: {{album.tracks.total}} </span>
+        <span *ngIf="album.type === 'album'">Tracks: {{ album.total_tracks}}</span>
+        <span *ngIf="album.type === 'artist'" class="followers">Followers: {{album.followers.total}} </span>
     </div>
 </div>

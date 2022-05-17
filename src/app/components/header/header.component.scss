@@ -1,9 +1,5 @@
 header {
     background-color: var(--color-bg-header);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
     span {
         color: #fff;
     }
@@ -11,15 +7,32 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
         img {
             margin-right: 10px;
             height: 40px;
         }
-     
     }
-    .logo-container{
+    .logo-container {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+    }
+    .search {
+        width: 70%;
+    }
+}
+
+/* Media Queries (Small Devices) */
+
+@media screen and (max-width: 600px) {
+    span {
+        display: none;
     }
 }

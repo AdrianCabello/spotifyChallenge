@@ -1,4 +1,4 @@
 <div class="search-container">
     <span class="material-icons">search</span>
-    <input type="text" #term (keyup)="search(term.value)" placeholder="Search your artist">
+    <input type="text" [formControl]="term" [value]="term" placeholder="Search your artist">
 </div>

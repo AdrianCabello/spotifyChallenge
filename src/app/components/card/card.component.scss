@@ -1,23 +1,43 @@
-.card-container{
-    background-color: #ccc;
-    border-radius: 4px;
-    padding: 10px;
+.card-container {
+    background-color: #464646;
+    border-radius: 1rem;
+    padding: 0.9rem;
     display: flex;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    flex-direction: column;
+    color: #fff;
     margin-bottom: 1rem;
+ /*    margin-right: 0.8rem;
+    margin-left: 0.8rem; */
     cursor: pointer;
-    h2{
-        font-size: 1.2rem;
-        text-align: center;
+    width:100%;
+    
+    .img-container {
+        display: flex;
+        justify-content: center;
     }
-    h3{
-        font-size:1rem;
+    .info-container {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
-    span{
+    h2 {
+        font-size: 1rem;
+        text-align: left;
+    }
+    h3 {
         font-size: 1rem;
     }
-    img{
-        height: 100px;
-        margin-right: 1rem;
+    span {
+        font-size: 1rem;
+    }
+    img {
+        /* height: 220px; */
+        width: 100%;
+        border-radius: 1rem;
+        margin-bottom: 0.7rem;
+    }
+    .followers {
+        opacity: 0.8;
+        font-size: 0.9rem;
     }
 }
