@@ -4,16 +4,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { RouterModule } from '@angular/router';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { ROUTES } from './app.routes';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SearchComponent } from './components/search/search.component';
-import { LoginComponent } from './pages/login/login.component';
 import { CardComponent } from './components/card/card.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ArtistComponent } from './pages/artist/artist.component';
 import { PlaylistComponent } from './pages/playlist/playlist.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 import { SpotifyService } from './services/spotify.service';
 
@@ -21,8 +22,6 @@ import { NoImagePipe } from './pipes/noimage.pipe';
 import { DomSecurityPipe } from './pipes/dom-security';
 
 import { artistsReducer } from './redux/reducers/artists.reducer';
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-import { LoadingComponent } from './components/loading/loading.component';
 import { loadingReducer } from './redux/reducers/loading.reducer';
 
 
@@ -31,7 +30,6 @@ import { loadingReducer } from './redux/reducers/loading.reducer';
     AppComponent,
     HomeComponent,
     SearchComponent,
-    LoginComponent,
     HeaderComponent,
     CardComponent,
     NoImagePipe,

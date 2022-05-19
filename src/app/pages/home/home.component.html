@@ -7,6 +7,13 @@
     </div>
 
     <article class="albums-container animate__animated animate__fadeIn" *ngIf="artists.length == 0  && !loading && !error">
+        <h1>Me PlayLists:</h1>
+        <div class="cards-container">
+            <app-card class="card" *ngFor="let album of mePlaylist" [album]="album"></app-card>
+        </div>
+    </article>
+
+    <article class="albums-container animate__animated animate__fadeIn" *ngIf="artists.length == 0  && !loading && !error">
         <h1>Featured PlayLists:</h1>
         <div class="cards-container">
             <app-card class="card" *ngFor="let album of playlist" [album]="album"></app-card>

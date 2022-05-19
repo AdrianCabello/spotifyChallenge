@@ -106,4 +106,11 @@ export class SpotifyService {
     return this.getQuery(`playlists/${id}/tracks?limit=10&offset=${offset}`)
   }
 
+  getMePlaylist() {
+    return this.getQuery(`me/playlists`)
+      .pipe(
+        map(data => data['items'])
+      )
+  }
+
 }

@@ -15,16 +15,8 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   showArtist() {
     let artistId;
-
-   /*  if (this.album.type === 'artist') {
-      artistId = this.album.id
-    } else {
-      artistId = this.album.artists[0].id;
-    } */
-
     switch (this.album.type) {
       case 'artist':
         artistId = this.album.id
@@ -43,7 +35,5 @@ export class CardComponent implements OnInit {
       default:
         break;
     }
-
-
   }
 }

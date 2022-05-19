@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   subArtists: Subscription;
   artists = []
   playlist: any;
+  mePlaylist: any;
   constructor(private _spotifyService: SpotifyService, private store: Store) { }
 
   ngOnInit(): void {
@@ -38,6 +39,19 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   getPlaylist() {
     this.loading = true
+
+    this._spotifyService.getMePlaylist().subscribe(
+      (data) => {
+        this.loading = false;
+        this.mePlaylist = data;
+      },
+      (error) => {
+        this.loading = false;
+        this.error = true;
+        this.errorMessage = error.error.error.message
+      }
+    )
+
     this._spotifyService.getPlaylists().subscribe(
       (data) => {
         this.loading = false;

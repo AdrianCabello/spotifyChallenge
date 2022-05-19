@@ -47,8 +47,5 @@ export class SearchComponent implements OnInit {
         this.store.dispatch(setLoading({ loading: false }))
       }
     });
-
-
-
   }
 }
